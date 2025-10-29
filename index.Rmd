@@ -1,0 +1,20 @@
+---
+title: "Karolina Wiesiolek - kw3041"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+
+---
+
+# Short introduction
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmttNnk5NThqcXJvNzUyY21tbXN4eWp6bThmc2x2ZmM4aTMwdmdyaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Sb7WSbjHFNIL6/giphy.gif)
+
+
+My name is Karolina Wiesiolek and I am a first-year student in the MS program in Environemntal Health Science's department at Mailman School of Public Health. My program is Environmental Health Data Sciences and I am very excited to continue learning!
+
+Click [here](https://www.linkedin.com/in/karolina-wiesiolek-8a47b523b) to get to my LinkedIn page. 
+
+
+Learn more about me [here](about.html). 

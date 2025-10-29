@@ -1,0 +1,17 @@
+---
+title: "About me - resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+# Academic and Professional Experience
+
+[**Download my Resume (PDF)**](Resume.pdf)
+
+<iframe src="Resume.pdf" width="100%" height="800px"></iframe>
+
+Go back to the [homepage](index.html).
+
