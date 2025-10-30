@@ -1,0 +1,97 @@
+---
+title: "Flexdashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+
+library(tidyverse)
+library(httr)
+library(jsonlite)
+library(p8105.datasets)
+library(readxl)
+library(plotly)
+
+data("instacart")
+instacart_small <- instacart |> sample_n(20000)
+
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A - Scatterplot
+
+```{r scatterplot, echo = FALSE}
+instacart_small <- instacart |> sample_n(20000)
+
+instacart_small |>
+  mutate(
+    label = str_c(department, " — ", product_name)
+  ) |>
+  plot_ly(
+    x = ~days_since_prior_order,
+    y = ~add_to_cart_order,
+    color = ~department,
+    text = ~label,
+    type = "scatter",
+    mode = "markers",
+    alpha = 0.5
+  ) |>
+  plotly::layout(
+    title = "Relationship Between Time Since Last Order and Cart Order",
+    xaxis = list(title = "Days Since Prior Order"),
+    yaxis = list(title = "Cart Order")
+  )
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B -- Barplot
+
+```{r barplot, echo = FALSE}
+top_aisles <- instacart |>
+  count(aisle, sort = TRUE) |>
+  slice_head(n = 10)
+
+plot_ly(
+  data = top_aisles,
+  x = ~reorder(aisle, n),
+  y = ~n,
+  type = "bar"
+) |>
+  plotly::layout(
+    title = "Top 10 Aisles by Number of Products Ordered",
+    xaxis = list(title = "Aisle"),
+    yaxis = list(title = "Number of Orders")
+  )
+
+```
+
+### Chart C -- Boxplot 
+
+```{r boxplot, echo = FALSE}
+plot_ly(
+  data = instacart,
+  x = ~department,
+  y = ~order_hour_of_day,
+  type = "box"
+) |>
+  plotly::layout(
+    title = "Distribution of Order Times by Department",
+    xaxis = list(title = "Department"),
+    yaxis = list(title = "Hour of Day")
+  )
+
+```
+

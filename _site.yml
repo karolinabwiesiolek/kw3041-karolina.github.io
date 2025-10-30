@@ -5,8 +5,12 @@ navbar:
   right:
     - text: "About"
       href: about.html
+    - text: "Linked In"
+      href: https://www.linkedin.com/in/karolina-wiesiolek-8a47b523b
     - text: "Plots"
       href: plots.html
+    - text: "Flexdashboard"
+      href: Flexdashboard.html
     - icon: fa-envelope fa-lg
       href: mailto:<kw3041@cumc.columbia.edu>
     - icon: fa-github fa-lg
